@@ -1,0 +1,41 @@
+name: movie_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  glassmorphism: ^3.0.0
+  flutter_svg: ^1.1.6
+  flutter_rating_bar: ^4.0.1
+  http: ^0.13.5
+  provider: ^6.0.3
+  shared_preferences: ^2.0.15
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+  fonts:
+    - family: Open sans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/OpenSans-Bold.ttf
+          weight: 700
