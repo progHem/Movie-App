@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/extensions/extensions.dart';
 import 'package:movie_app/core/theme/theme_colors.dart';
 import 'package:movie_app/features/components/favorite_icon.dart';
+import 'package:movie_app/features/movieInfo/movie_info.dart';
 
 class TrendBuilder extends StatefulWidget {
   final Future getFunc;
@@ -14,29 +15,28 @@ class TrendBuilder extends StatefulWidget {
 class _TrendBuilderState extends State<TrendBuilder> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: SizedBox(
-        height: context.h * 0.69,
-        child: FutureBuilder(
-            future: widget.getFunc,
-            builder: (context, AsyncSnapshot snapshot) {
-              if (snapshot.hasData) {
-                return ListView.builder(
+    return Expanded(
+      child: FutureBuilder(
+          future: widget.getFunc,
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: ListView.builder(
                   shrinkWrap: true,
                   itemCount: snapshot.data['results'].length,
                   itemBuilder: (context, index) {
                     return trendItem(context, snapshot.data['results'][index]);
                   },
-                );
-              }
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: cyanColor,
                 ),
               );
-            }),
-      ),
+            }
+            return const Center(
+              child: CircularProgressIndicator(
+                color: cyanColor,
+              ),
+            );
+          }),
     );
   }
 
@@ -44,6 +44,13 @@ class _TrendBuilderState extends State<TrendBuilder> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0),
       child: GestureDetector(
+        onTap: (() {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => MovieInfo(data: item)),
+          );
+        }),
         child: Stack(
           children: [
             ClipRRect(

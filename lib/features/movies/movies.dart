@@ -22,14 +22,13 @@ class Movies extends StatelessWidget {
               style: headingStyle.copyWith(fontSize: 28.0),
               textAlign: TextAlign.center),
           SizedBox(height: context.h * 0.06),
-          // const SearchField(),
-          // SizedBox(height: context.h * 0.04),
-          Padding(
-            padding: const EdgeInsets.only(left: 18.0),
-            child: SizedBox(
-              width: context.w,
-              height: context.h * 0.68,
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.only(
+                left: 18.0,
+              ),
               child: ListView(
+                shrinkWrap: true,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +37,7 @@ class Movies extends StatelessWidget {
                           style: subtitleStyle.copyWith(
                               fontWeight: FontWeight.w400, fontSize: 17.5)),
                       SizedBox(height: context.h * 0.04),
-                      MovieBuilder(getFunc:getMovies('/3/movie/now_playing'))
+                      MovieBuilder(getFunc: getMovies('/3/movie/now_playing'))
                     ],
                   ),
                   SizedBox(height: context.h * 0.04),
@@ -59,9 +58,10 @@ class Movies extends StatelessWidget {
                   SizedBox(height: context.h * 0.02),
                   const MoviesTypes(),
                   SizedBox(height: context.h * 0.04),
-                  MovieBuilder(getFunc: getMovies('/3/discover/movie', params: {
+                  MovieBuilder(
+                      getFunc: getMovies('/3/discover/movie', params: {
                     'api_key': 'bf9baac7c63a927457be5ccfa15fd766',
-                    'with_genres':'${context.watch<MovieProvider>().getId}'
+                    'with_genres': '${context.watch<MovieProvider>().getId}'
                   }))
                 ],
               ),

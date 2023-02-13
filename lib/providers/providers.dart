@@ -23,12 +23,11 @@ class MovieProvider with ChangeNotifier {
 
   removeFavorite(int movieId) {
     favorites.removeWhere((e) => e["id"] == movieId);
-
     notifyListeners();
   }
 
   searchForFavorite(currentId) {
-    if ((favoritesList.any((e) => e['id'] == currentId))) {
+    if ((favorites.any((e) => e['id'] == currentId))) {
       return true;
     } else {
       return false;

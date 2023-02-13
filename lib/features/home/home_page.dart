@@ -65,46 +65,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: blackColor,
       body: buildPageView(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: Container(
-      //   height: 64,
-      //   width: 64,
-      //   padding: const EdgeInsets.all(4),
-      //   margin: const EdgeInsets.only(top: 40),
-      //   decoration: BoxDecoration(
-      //     shape: BoxShape.circle,
-      //     gradient: LinearGradient(
-      //       begin: Alignment.topLeft,
-      //       end: Alignment.bottomRight,
-      //       colors: [
-      //         pinkColor.withOpacity(0.2),
-      //         greenColor.withOpacity(0.2)
-      //       ],
-      //     ),
-      //   ),
-      //   child: Container(
-      //     height: 60,
-      //     width: 60,
-      //     padding: const EdgeInsets.all(4),
-      //     decoration: const BoxDecoration(
-      //       shape: BoxShape.circle,
-      //       gradient: LinearGradient(
-      //         begin: Alignment.topLeft,
-      //         end: Alignment.bottomRight,
-      //         colors: [
-      //           pinkColor,
-      //           greenColor,
-      //         ],
-      //       ),
-      //     ),
-      //     child: RawMaterialButton(
-      //       onPressed: () {},
-      //       shape: const CircleBorder(),
-      //       fillColor: const Color(0xff404c57),
-      //       child: Icon(Icons.fire_extinguisher),
-      //     ),
-      //   ),
-      // ),
       bottomNavigationBar: GlassmorphicContainer(
         width: context.w,
         height: context.h * 0.08,

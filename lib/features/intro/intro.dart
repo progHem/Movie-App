@@ -120,8 +120,8 @@ class _IntroPageState extends State<IntroPage>
                         strokeWidth: 2.0,
                         radius: 20.0,
                         padding: const EdgeInsets.all(4),
-                        width: 130.0,
-                        height: 35.0,
+                        width: context.w *0.35,
+                        height: context.h * 0.05,
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,

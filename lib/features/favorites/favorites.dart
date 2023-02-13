@@ -19,7 +19,8 @@ class Favorites extends StatefulWidget {
 class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
-    
+    final movies = Provider.of<MovieProvider>(context);
+
     return ScaffoldBackground(
       child: Column(
         children: [
@@ -28,11 +29,11 @@ class _FavoritesState extends State<Favorites> {
               style: headingStyle.copyWith(fontSize: 28.0),
               textAlign: TextAlign.center),
           SizedBox(height: context.h * 0.04),
-          context.watch<MovieProvider>().favoritesList.length > 0
+          movies.favorites.isNotEmpty
               ? const FavoritesBuilder()
               : Center(
                   child: Text(
-                  "You don't have any movies in your favorites list",
+                  "You don't have any movies in your favorites list.",
                   style: subtitleStyle,
                 ))
           

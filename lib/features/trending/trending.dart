@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/contstants/assets.dart';
 import 'package:movie_app/core/extensions/extensions.dart';
 import 'package:movie_app/features/trending/trend_bulider.dart';
 import 'package:movie_app/services/api_services.dart';
@@ -22,7 +21,6 @@ class Trending extends StatelessWidget {
               Text('Trending',
                   style: headingStyle.copyWith(fontSize: 28.0),
                   textAlign: TextAlign.center),
-              Image.asset(Assets.animatedFire)
             ],
           ),
           SizedBox(height: context.h * 0.04),
